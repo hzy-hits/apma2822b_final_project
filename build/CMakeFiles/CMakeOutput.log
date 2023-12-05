@@ -1,0 +1,911 @@
+The system is: Linux - 3.10.0-1160.76.1.el7.x86_64 - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /gpfs/runtime/opt/gcc/10.2/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/users/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCXX/a.out"
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" succeeded.
+Compiler: /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/nvcc 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+0
+#$ _NVVM_BRANCH_=nvvm
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/gpfs/runtime/opt/cuda/12.2.2/cuda/bin
+#$ _THERE_=/gpfs/runtime/opt/cuda/12.2.2/cuda/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_DIR_=targets/x86_64-linux
+#$ TOP=/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/..
+#$ NVVMIR_LIBRARY_DIR=/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../lib:/gpfs/runtime/opt/gcc/10.2/lib64:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64:/gpfs/runtime/opt/cuda/12.2.2/src/lib64:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64:/gpfs/runtime/opt/python/2.7.12/lib:/gpfs/runtime/opt/java/jdk-19.0.2/lib
+#$ PATH=/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../nvvm/bin:/gpfs/runtime/opt/cuda/12.2.2/cuda/bin:/gpfs/runtime/opt/ninja/1.9.0/:/gpfs/runtime/opt/cmake/3.15.4/bin:/gpfs/runtime/opt/gcc/10.2/bin:/gpfs/runtime/opt/cuda/12.2.2/cuda/bin:/gpfs/runtime/opt/intel/2017.0/bin:/gpfs/runtime/opt/python/2.7.12/bin:/gpfs/runtime/opt/matlab/R2017b/bin:/gpfs/runtime/opt/java/jdk-19.0.2/bin:/oscar/home/zhuan160/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/lpp/mmfs/bin:/usr/lpp/mmfs/sbin:/opt/ibutils/bin:/gpfs/runtime/bin:/opt/singularity/2.5.2/bin:/usr/local/sbin:/usr/sbin:/users/zhuan160/bin
+#$ INCLUDES="-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"  
+#$ LIBRARIES=  "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"
+#$ CUDAFE_FLAGS=
+#$ PTXAS_FLAGS=
+#$ rm tmp/a_dlink.reg.c
+#$ gcc -D__CUDA_ARCH_LIST__=520 -E -x c++ -D__CUDACC__ -D__NVCC__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp4.ii" 
+#$ cudafe++ --c++14 --gnu_version=100200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/oscar/home/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed  --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" 
+#$ gcc -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" 
+#$ cicc --c++14 --gnu_version=100200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/oscar/home/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"
+#$ ptxas -arch=sm_52 -m64  "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_52.cubin" 
+#$ fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=52,file=tmp/CMakeCUDACompilerId.sm_52.cubin" "--image3=kind=ptx,sm=52,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" 
+#$ gcc -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"   -m64 "tmp/CMakeCUDACompilerId.cudafe1.cpp" -o "tmp/CMakeCUDACompilerId.o" 
+#$ nvlink -m64 --arch=sm_52 --register-link-binaries="tmp/a_dlink.reg.c"    "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.o"  -lcudadevrt  -o "tmp/a_dlink.sm_52.cubin" --host-ccbin "gcc"
+#$ fatbinary --create="tmp/a_dlink.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " -link "--image3=kind=elf,sm=52,file=tmp/a_dlink.sm_52.cubin" --embedded-fatbin="tmp/a_dlink.fatbin.c" 
+#$ gcc -D__CUDA_ARCH_LIST__=520 -c -x c++ -DFATBINFILE="\"tmp/a_dlink.fatbin.c\"" -DREGISTERLINKBINARYFILE="\"tmp/a_dlink.reg.c\"" -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -m64 "/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/crt/link.stub" -o "tmp/a_dlink.o" 
+#$ g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" 
+
+
+Compilation of the CUDA compiler identification source "CMakeCUDACompilerId.cu" produced "a.out"
+
+The CUDA compiler identification is NVIDIA, found in "/users/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/a.out"
+
+Parsed CUDA nvcc implicit link information from above output:
+  found 'PATH=' string: [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../nvvm/bin:/gpfs/runtime/opt/cuda/12.2.2/cuda/bin:/gpfs/runtime/opt/ninja/1.9.0/:/gpfs/runtime/opt/cmake/3.15.4/bin:/gpfs/runtime/opt/gcc/10.2/bin:/gpfs/runtime/opt/cuda/12.2.2/cuda/bin:/gpfs/runtime/opt/intel/2017.0/bin:/gpfs/runtime/opt/python/2.7.12/bin:/gpfs/runtime/opt/matlab/R2017b/bin:/gpfs/runtime/opt/java/jdk-19.0.2/bin:/oscar/home/zhuan160/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/lpp/mmfs/bin:/usr/lpp/mmfs/sbin:/opt/ibutils/bin:/gpfs/runtime/bin:/opt/singularity/2.5.2/bin:/usr/local/sbin:/usr/sbin:/users/zhuan160/bin]
+  found 'LIBRARIES=' string: ["-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"]
+  considering line: [#$ rm tmp/a_dlink.reg.c]
+  considering line: [gcc -D__CUDA_ARCH_LIST__=520 -E -x c++ -D__CUDACC__ -D__NVCC__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+  considering line: [cudafe++ --c++14 --gnu_version=100200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/oscar/home/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed  --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+  considering line: [gcc -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" ]
+  considering line: [cicc --c++14 --gnu_version=100200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/oscar/home/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"]
+  considering line: [ptxas -arch=sm_52 -m64  "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_52.cubin" ]
+  considering line: [fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=52,file=tmp/CMakeCUDACompilerId.sm_52.cubin" "--image3=kind=ptx,sm=52,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" ]
+  considering line: [gcc -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"   -m64 "tmp/CMakeCUDACompilerId.cudafe1.cpp" -o "tmp/CMakeCUDACompilerId.o" ]
+  considering line: [nvlink -m64 --arch=sm_52 --register-link-binaries="tmp/a_dlink.reg.c"    "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.o"  -lcudadevrt  -o "tmp/a_dlink.sm_52.cubin" --host-ccbin "gcc"]
+    ignoring nvlink line
+  considering line: [fatbinary --create="tmp/a_dlink.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " -link "--image3=kind=elf,sm=52,file=tmp/a_dlink.sm_52.cubin" --embedded-fatbin="tmp/a_dlink.fatbin.c" ]
+  considering line: [gcc -D__CUDA_ARCH_LIST__=520 -c -x c++ -DFATBINFILE="\"tmp/a_dlink.fatbin.c\"" -DREGISTERLINKBINARYFILE="\"tmp/a_dlink.reg.c\"" -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -m64 "/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/crt/link.stub" -o "tmp/a_dlink.o" ]
+  considering line: [g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+    extracted link line: [g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+  considering line: []
+  extracted link launcher name: [g++]
+  found link launcher absolute path: [/gpfs/runtime/opt/gcc/10.2/bin/g++]
+
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line: [cuda-fake-ld g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+    arg [cuda-fake-ld] ==> ignore
+    arg [g++] ==> ignore
+    arg [-D__CUDA_ARCH_LIST__=520] ==> ignore
+    arg [-m64] ==> ignore
+    arg [-Wl,--start-group] ==> ignore
+    arg [tmp/a_dlink.o] ==> ignore
+    arg [tmp/CMakeCUDACompilerId.o] ==> ignore
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs]
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib]
+    arg [-lcudadevrt] ==> lib [cudadevrt]
+    arg [-lcudart_static] ==> lib [cudart_static]
+    arg [-lrt] ==> lib [rt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ldl] ==> lib [dl]
+    arg [-Wl,--end-group] ==> ignore
+    arg [-o] ==> ignore
+    arg [a.out] ==> ignore
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs]
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib]
+  implicit libs: [cudadevrt;cudart_static;rt;pthread;dl]
+  implicit dirs: [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs;/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib]
+  implicit fwks: []
+
+
+Parsed CUDA nvcc include information from above output:
+  found 'PATH=' string: [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../nvvm/bin:/gpfs/runtime/opt/cuda/12.2.2/cuda/bin:/gpfs/runtime/opt/ninja/1.9.0/:/gpfs/runtime/opt/cmake/3.15.4/bin:/gpfs/runtime/opt/gcc/10.2/bin:/gpfs/runtime/opt/cuda/12.2.2/cuda/bin:/gpfs/runtime/opt/intel/2017.0/bin:/gpfs/runtime/opt/python/2.7.12/bin:/gpfs/runtime/opt/matlab/R2017b/bin:/gpfs/runtime/opt/java/jdk-19.0.2/bin:/oscar/home/zhuan160/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/lpp/mmfs/bin:/usr/lpp/mmfs/sbin:/opt/ibutils/bin:/gpfs/runtime/bin:/opt/singularity/2.5.2/bin:/usr/local/sbin:/usr/sbin:/users/zhuan160/bin]
+  found 'LIBRARIES=' string: ["-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"]
+  considering line: [#$ rm tmp/a_dlink.reg.c]
+  considering line: [gcc -D__CUDA_ARCH_LIST__=520 -E -x c++ -D__CUDACC__ -D__NVCC__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+  considering line: [cudafe++ --c++14 --gnu_version=100200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/oscar/home/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed  --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+  considering line: [gcc -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" ]
+  considering line: [cicc --c++14 --gnu_version=100200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/oscar/home/zhuan160/APMA2822B/final_project/build/CMakeFiles/3.15.4/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"]
+  considering line: [ptxas -arch=sm_52 -m64  "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_52.cubin" ]
+  considering line: [fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=52,file=tmp/CMakeCUDACompilerId.sm_52.cubin" "--image3=kind=ptx,sm=52,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" ]
+  considering line: [gcc -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"   -m64 "tmp/CMakeCUDACompilerId.cudafe1.cpp" -o "tmp/CMakeCUDACompilerId.o" ]
+  considering line: [nvlink -m64 --arch=sm_52 --register-link-binaries="tmp/a_dlink.reg.c"    "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.o"  -lcudadevrt  -o "tmp/a_dlink.sm_52.cubin" --host-ccbin "gcc"]
+    ignoring nvlink line
+  considering line: [fatbinary --create="tmp/a_dlink.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " -link "--image3=kind=elf,sm=52,file=tmp/a_dlink.sm_52.cubin" --embedded-fatbin="tmp/a_dlink.fatbin.c" ]
+  considering line: [gcc -D__CUDA_ARCH_LIST__=520 -c -x c++ -DFATBINFILE="\"tmp/a_dlink.fatbin.c\"" -DREGISTERLINKBINARYFILE="\"tmp/a_dlink.reg.c\"" -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  "-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=2 -D__CUDACC_VER_BUILD__=140 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=2 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -m64 "/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/crt/link.stub" -o "tmp/a_dlink.o" ]
+  considering line: [g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+    extracted link line: [g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+  considering line: []
+  extracted link launcher name: [g++]
+  found link launcher absolute path: [/gpfs/runtime/opt/gcc/10.2/bin/g++]
+  found 'INCLUDES=' string: ["-I/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include"  ]
+
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line: [cuda-fake-ld g++ -D__CUDA_ARCH_LIST__=520 -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+    arg [cuda-fake-ld] ==> ignore
+    arg [g++] ==> ignore
+    arg [-D__CUDA_ARCH_LIST__=520] ==> ignore
+    arg [-m64] ==> ignore
+    arg [-Wl,--start-group] ==> ignore
+    arg [tmp/a_dlink.o] ==> ignore
+    arg [tmp/CMakeCUDACompilerId.o] ==> ignore
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs]
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib]
+    arg [-lcudadevrt] ==> lib [cudadevrt]
+    arg [-lcudart_static] ==> lib [cudart_static]
+    arg [-lrt] ==> lib [rt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ldl] ==> lib [dl]
+    arg [-Wl,--end-group] ==> ignore
+    arg [-o] ==> ignore
+    arg [a.out] ==> ignore
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib/stubs] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs]
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/lib] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib]
+  implicit libs: [cudadevrt;cudart_static;rt;pthread;dl]
+  implicit dirs: [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs;/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /users/zhuan160/APMA2822B/final_project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/gpfs/runtime/opt/ninja/1.9.0/ninja cmTC_02025 && [1/2] Building CXX object CMakeFiles/cmTC_02025.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_02025
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /users/zhuan160/APMA2822B/final_project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/gpfs/runtime/opt/ninja/1.9.0/ninja cmTC_71eb0 && [1/2] Building CXX object CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o
+Using built-in specs.
+COLLECT_GCC=/gpfs/runtime/opt/gcc/10.2/bin/c++
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccuRTgSw.s
+GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include <...> search starts here:
+ /gpfs/runtime/opt/cuda/12.2.2/cuda/include
+ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/
+ /gpfs/runtime/opt/python/2.7.12/include
+ /gpfs/runtime/opt/gcc/10.2/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+ /usr/local/include
+ /usr/include
+End of search list.
+GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 6596791e66259363b24761a92e960d36
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccuRTgSw.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+[2/2] Linking CXX executable cmTC_71eb0
+Using built-in specs.
+COLLECT_GCC=/gpfs/runtime/opt/gcc/10.2/bin/c++
+COLLECT_LTO_WRAPPER=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71eb0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuAGVaD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_71eb0 /lib/../lib64/crt1.o /lib/../lib64/crti.o /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64 -L/gpfs/runtime/opt/intel/2017.0/lib/intel64 -L/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64 -L/gpfs/runtime/opt/python/2.7.12/lib -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71eb0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/gpfs/runtime/opt/cuda/12.2.2/cuda/include]
+    add: [/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+    add: [/gpfs/runtime/opt/python/2.7.12/include]
+    add: [/gpfs/runtime/opt/gcc/10.2/include]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+    add: [/usr/local/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/include] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/include]
+  collapse include dir [/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/] ==> [/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64]
+  collapse include dir [/gpfs/runtime/opt/python/2.7.12/include] ==> [/gpfs/runtime/opt/python/2.7.12/include]
+  collapse include dir [/gpfs/runtime/opt/gcc/10.2/include] ==> [/gpfs/runtime/opt/gcc/10.2/include]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0] ==> [/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu] ==> [/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/x86_64-pc-linux-gnu]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward] ==> [/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/backward]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/gpfs/runtime/opt/cuda/12.2.2/cuda/include;/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64;/gpfs/runtime/opt/python/2.7.12/include;/gpfs/runtime/opt/gcc/10.2/include;/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0;/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/x86_64-pc-linux-gnu;/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/backward;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed;/usr/local/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /users/zhuan160/APMA2822B/final_project/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/gpfs/runtime/opt/ninja/1.9.0/ninja cmTC_71eb0 && [1/2] Building CXX object CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/gpfs/runtime/opt/gcc/10.2/bin/c++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccuRTgSw.s]
+  ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /gpfs/runtime/opt/cuda/12.2.2/cuda/include]
+  ignore line: [ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+  ignore line: [ /gpfs/runtime/opt/python/2.7.12/include]
+  ignore line: [ /gpfs/runtime/opt/gcc/10.2/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 6596791e66259363b24761a92e960d36]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccuRTgSw.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [[2/2] Linking CXX executable cmTC_71eb0]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/gpfs/runtime/opt/gcc/10.2/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71eb0' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuAGVaD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_71eb0 /lib/../lib64/crt1.o /lib/../lib64/crti.o /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64 -L/gpfs/runtime/opt/intel/2017.0/lib/intel64 -L/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64 -L/gpfs/runtime/opt/python/2.7.12/lib -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccuAGVaD.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_71eb0] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> ignore
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64]
+    arg [-L/gpfs/runtime/opt/intel/2017.0/lib/intel64] ==> dir [/gpfs/runtime/opt/intel/2017.0/lib/intel64]
+    arg [-L/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64] ==> dir [/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64]
+    arg [-L/gpfs/runtime/opt/python/2.7.12/lib] ==> dir [/gpfs/runtime/opt/python/2.7.12/lib]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..]
+    arg [CMakeFiles/cmTC_71eb0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64]
+  collapse library dir [/gpfs/runtime/opt/intel/2017.0/lib/intel64] ==> [/gpfs/runtime/opt/intel/2017.0/lib/intel64]
+  collapse library dir [/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64] ==> [/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64]
+  collapse library dir [/gpfs/runtime/opt/python/2.7.12/lib] ==> [/gpfs/runtime/opt/python/2.7.12/lib]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc;/oscar/rt/7.2/opt/gcc/10.2/lib64;/lib64;/usr/lib64;/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64;/gpfs/runtime/opt/intel/2017.0/lib/intel64;/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64;/gpfs/runtime/opt/python/2.7.12/lib;/oscar/rt/7.2/opt/gcc/10.2/lib]
+  implicit fwks: []
+
+
+Determining if the CUDA compiler works passed with the following output:
+Change Dir: /users/zhuan160/APMA2822B/final_project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/gpfs/runtime/opt/ninja/1.9.0/ninja cmTC_3db43 && [1/2] Building CUDA object CMakeFiles/cmTC_3db43.dir/main.cu.o
+[2/2] Linking CUDA executable cmTC_3db43
+
+
+
+Detecting CUDA compiler ABI info compiled with the following output:
+Change Dir: /users/zhuan160/APMA2822B/final_project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/gpfs/runtime/opt/ninja/1.9.0/ninja cmTC_7efb9 && [1/2] Building CUDA object CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o
+Using built-in specs.
+COLLECT_GCC=gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fc0_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"
+  as it is a non-system directory that duplicates a system directory
+ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include
+ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/
+ /gpfs/runtime/opt/python/2.7.12/include
+ /gpfs/runtime/opt/gcc/10.2/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+ /usr/local/include
+ /usr/include
+End of search list.
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64'
+Using built-in specs.
+COLLECT_GCC=gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fc0_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"
+  as it is a non-system directory that duplicates a system directory
+ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include
+ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/
+ /gpfs/runtime/opt/python/2.7.12/include
+ /gpfs/runtime/opt/gcc/10.2/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+ /usr/local/include
+ /usr/include
+End of search list.
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64'
+Using built-in specs.
+COLLECT_GCC=gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_00023fc0_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpbase tmpxft_00023fc0_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -m64 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o -version -o /tmp/ccLqJ32G.s
+GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"
+  as it is a non-system directory that duplicates a system directory
+ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include
+ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/
+ /gpfs/runtime/opt/python/2.7.12/include
+ /gpfs/runtime/opt/gcc/10.2/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+ /usr/local/include
+ /usr/include
+End of search list.
+GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 6596791e66259363b24761a92e960d36
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64'
+ as -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include --64 -o CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o /tmp/ccLqJ32G.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64'
+Using built-in specs.
+COLLECT_GCC=gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-5_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fd0_00000000-5_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"
+  as it is a non-system directory that duplicates a system directory
+ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include
+ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/
+ /gpfs/runtime/opt/python/2.7.12/include
+ /gpfs/runtime/opt/gcc/10.2/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+ /usr/local/include
+ /usr/include
+End of search list.
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-5_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64'
+Using built-in specs.
+COLLECT_GCC=gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-6_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fd0_00000000-6_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"
+ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"
+  as it is a non-system directory that duplicates a system directory
+ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include
+ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/
+ /gpfs/runtime/opt/python/2.7.12/include
+ /gpfs/runtime/opt/gcc/10.2/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+ /usr/local/include
+ /usr/include
+End of search list.
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-6_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64'
+[2/2] Linking CUDA executable cmTC_7efb9
+Using built-in specs.
+COLLECT_GCC=/gpfs/runtime/opt/gcc/10.2/bin/g++
+COLLECT_LTO_WRAPPER=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 10.2.0 (GCC) 
+COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/
+LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7efb9' '-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs' '-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4EruT3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7efb9 /lib/../lib64/crt1.o /lib/../lib64/crti.o /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs -L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64 -L/gpfs/runtime/opt/intel/2017.0/lib/intel64 -L/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64 -L/gpfs/runtime/opt/python/2.7.12/lib -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7efb9' '-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs' '-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+
+
+
+Parsed CUDA implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include]
+    add: [/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+    add: [/gpfs/runtime/opt/python/2.7.12/include]
+    add: [/gpfs/runtime/opt/gcc/10.2/include]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+    add: [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+    add: [/usr/local/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/include]
+  collapse include dir [/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/] ==> [/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64]
+  collapse include dir [/gpfs/runtime/opt/python/2.7.12/include] ==> [/gpfs/runtime/opt/python/2.7.12/include]
+  collapse include dir [/gpfs/runtime/opt/gcc/10.2/include] ==> [/gpfs/runtime/opt/gcc/10.2/include]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0] ==> [/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu] ==> [/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/x86_64-pc-linux-gnu]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward] ==> [/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/backward]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  collapse include dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/include;/gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64;/gpfs/runtime/opt/python/2.7.12/include;/gpfs/runtime/opt/gcc/10.2/include;/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0;/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/x86_64-pc-linux-gnu;/oscar/rt/7.2/opt/gcc/10.2/include/c++/10.2.0/backward;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed;/usr/local/include;/usr/include]
+
+
+Parsed CUDA implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /users/zhuan160/APMA2822B/final_project/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/gpfs/runtime/opt/ninja/1.9.0/ninja cmTC_7efb9 && [1/2] Building CUDA object CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fc0_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include]
+  ignore line: [ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+  ignore line: [ /gpfs/runtime/opt/python/2.7.12/include]
+  ignore line: [ /gpfs/runtime/opt/gcc/10.2/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fc0_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include]
+  ignore line: [ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+  ignore line: [ /gpfs/runtime/opt/python/2.7.12/include]
+  ignore line: [ /gpfs/runtime/opt/gcc/10.2/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fc0_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_00023fc0_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpbase tmpxft_00023fc0_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -m64 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o -version -o /tmp/ccLqJ32G.s]
+  ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include]
+  ignore line: [ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+  ignore line: [ /gpfs/runtime/opt/python/2.7.12/include]
+  ignore line: [ /gpfs/runtime/opt/gcc/10.2/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 6596791e66259363b24761a92e960d36]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include --64 -o CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o /tmp/ccLqJ32G.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o' '-mtune=generic' '-march=x86-64']
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-5_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fd0_00000000-5_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include]
+  ignore line: [ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+  ignore line: [ /gpfs/runtime/opt/python/2.7.12/include]
+  ignore line: [ /gpfs/runtime/opt/gcc/10.2/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-5_CMakeCUDACompilerABI.cpp1.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-6_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -E -quiet -v -I /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include -iprefix /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=2 -D __CUDACC_VER_BUILD__=140 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=2 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -include cuda_runtime.h /oscar/rt/7.2/opt/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00023fd0_00000000-6_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../include"]
+  ignore line: [ignoring duplicate directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/gcc/10.2/include"]
+  ignore line: [  as it is a non-system directory that duplicates a system directory]
+  ignore line: [ignoring duplicate directory "/gpfs/runtime/opt/cuda/12.2.2/cuda/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include]
+  ignore line: [ /gpfs/runtime/opt/intel/2017.0/mkl/include/intel64/ilp64/]
+  ignore line: [ /gpfs/runtime/opt/python/2.7.12/include]
+  ignore line: [ /gpfs/runtime/opt/gcc/10.2/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+  ignore line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/gpfs/runtime/opt/cuda/12.2.2/cuda/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=2' '-D' '__CUDACC_VER_BUILD__=140' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=2' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00023fd0_00000000-6_CMakeCUDACompilerABI.cpp4.ii' '-mtune=generic' '-march=x86-64']
+  ignore line: [[2/2] Linking CUDA executable cmTC_7efb9]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/gpfs/runtime/opt/gcc/10.2/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../src/configure --prefix=/gpfs/runtime/opt/gcc/10.2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib]
+  ignore line: [gcc version 10.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64/:/gpfs/runtime/opt/intel/2017.0/lib/intel64/:/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64/:/gpfs/runtime/opt/python/2.7.12/lib/:/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7efb9' '-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs' '-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4EruT3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7efb9 /lib/../lib64/crt1.o /lib/../lib64/crti.o /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs -L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64 -L/gpfs/runtime/opt/intel/2017.0/lib/intel64 -L/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64 -L/gpfs/runtime/opt/python/2.7.12/lib -L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/oscar/rt/7.2/opt/gcc/10.2/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc4EruT3.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_7efb9] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> ignore
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs]
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64] ==> dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64]
+    arg [-L/gpfs/runtime/opt/intel/2017.0/lib/intel64] ==> dir [/gpfs/runtime/opt/intel/2017.0/lib/intel64]
+    arg [-L/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64] ==> dir [/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64]
+    arg [-L/gpfs/runtime/opt/python/2.7.12/lib] ==> dir [/gpfs/runtime/opt/python/2.7.12/lib]
+    arg [-L/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..]
+    arg [CMakeFiles/cmTC_7efb9.dir/CMakeCUDACompilerABI.cu.o] ==> ignore
+    arg [-lcudadevrt] ==> lib [cudadevrt]
+    arg [-lcudart_static] ==> lib [cudart_static]
+    arg [-lrt] ==> lib [rt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ldl] ==> lib [dl]
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs]
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib/gcc]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64] ==> [/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64]
+  collapse library dir [/gpfs/runtime/opt/intel/2017.0/lib/intel64] ==> [/gpfs/runtime/opt/intel/2017.0/lib/intel64]
+  collapse library dir [/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64] ==> [/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64]
+  collapse library dir [/gpfs/runtime/opt/python/2.7.12/lib] ==> [/gpfs/runtime/opt/python/2.7.12/lib]
+  collapse library dir [/oscar/rt/7.2/opt/gcc/10.2/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> [/oscar/rt/7.2/opt/gcc/10.2/lib]
+  implicit libs: [cudadevrt;cudart_static;rt;pthread;dl;stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib/stubs;/gpfs/runtime/opt/cuda/12.2.2/cuda/targets/x86_64-linux/lib;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc/x86_64-pc-linux-gnu/10.2.0;/oscar/rt/7.2/opt/gcc/10.2/lib/gcc;/oscar/rt/7.2/opt/gcc/10.2/lib64;/lib64;/usr/lib64;/gpfs/runtime/opt/cuda/12.2.2/cuda/lib64;/gpfs/runtime/opt/intel/2017.0/lib/intel64;/gpfs/runtime/opt/intel/2017.0/mkl/lib/intel64;/gpfs/runtime/opt/python/2.7.12/lib;/oscar/rt/7.2/opt/gcc/10.2/lib]
+  implicit fwks: []
+
+
