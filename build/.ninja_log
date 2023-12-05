@@ -1,4 +1,4 @@
 # ninja log v5
-4	573	1701814552799760201	CMakeFiles/final_project.dir/src/main.cpp.o	1f0c9a09ffe59a3
-4	1138	1701814553139613150	CMakeFiles/final_project.dir/cuda/kernel.cu.o	a25b3f594ead16b
-1138	1229	1701814553459260658	final_project	bcf4043390c5d63
+3	497	1701814677342849260	CMakeFiles/final_project.dir/src/main.cpp.o	1f0c9a09ffe59a3
+3	1109	1701814677713740507	CMakeFiles/final_project.dir/cuda/kernel.cu.o	a25b3f594ead16b
+1109	1227	1701814678075850602	final_project	bcf4043390c5d63
