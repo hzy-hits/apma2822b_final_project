@@ -40,6 +40,14 @@ __global__ void sparseMatrixVecDotKernel(const float *val, const int *colInd, co
 {
     int row = blockIdx.x * blockDim.x + threadIdx.x;
 
+    // 使用共享内存来存储 vec 向量（如果大小适合）
+    // extern __shared__ float sharedVec[];
+    // if (threadIdx.x < vecSize)
+    // {
+    //     sharedVec[threadIdx.x] = vec[threadIdx.x];
+    // }
+    // __syncthreads(); // 确保所有数据都加载到 sharedVec 中
+
     if (row < numRows)
     {
         float dotProduct = 0.0f;
@@ -50,18 +58,61 @@ __global__ void sparseMatrixVecDotKernel(const float *val, const int *colInd, co
         result[row] = dotProduct;
     }
 }
+void kernelSparseMatVecdot(const std::vector<float> &val,
+                           const std::vector<int> &colInd,
+                           const std::vector<int> &indexPtr,
+                           const std::vector<float> &vec,
+                           std::vector<float> &result)
+{
+    // Check for valid inputs (omitted for brevity)
+
+    // Allocate memory on GPU
+    float *d_val, *d_vec, *d_result;
+    int *d_colInd, *d_indexPtr;
+    int sharedMemPerBlock;
+    cudaDeviceGetAttribute(&sharedMemPerBlock, cudaDevAttrMaxSharedMemoryPerBlock, 0);
+    
+    // Use cudaMalloc to allocate memory (omitted for brevity)
+    cudaMalloc(&d_val, val.size() * sizeof(float));
+    cudaMalloc(&d_colInd, colInd.size() * sizeof(int));
+    cudaMalloc(&d_indexPtr, indexPtr.size() * sizeof(int));
+    cudaMalloc(&d_vec, vec.size() * sizeof(float));
+    cudaMalloc(&d_result, result.size() * sizeof(float));
+    // Copy data to GPU
+
+    cudaMemcpy(d_val, val.data(), val.size() * sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_colInd, colInd.data(), colInd.size() * sizeof(int), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_vec, vec.data(), vec.size() * sizeof(float), cudaMemcpyHostToDevice);
+    auto sizeVec = vec.size();
+    // Use cudaMemcpy (omitted for brevity)
+
+    // Calculate grid and block sizes
+    int blockSize = 256; // Example block size, adjust as needed
+    int numBlocks = (indexPtr.size() + blockSize - 1) / blockSize;
+
+    // Launch kernel
+    sparseMatrixVecDotKernel<<<numBlocks, blockSize>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
+
+    // Copy results back to host
+    cudaMemcpy(result.data(), d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
+
+    // Clean up, free GPU memory
+    cudaFree(d_val);
+    cudaFree(d_colInd);
+    cudaFree(d_indexPtr);
+    cudaFree(d_vec);
+    cudaFree(d_result);
+}
 // void kernelSparseMatVecdot(const std::vector<float> &val,
 //                            const std::vector<int> &colInd,
 //                            const std::vector<int> &indexPtr,
 //                            const std::vector<float> &vec,
 //                            std::vector<float> &result)
 // {
-//     // Check for valid inputs (omitted for brevity)
-
-//     // Allocate memory on GPU
+//     // 省略输入检查和内存分配代码
 //     float *d_val, *d_vec, *d_result;
 //     int *d_colInd, *d_indexPtr;
-
 //     // Use cudaMalloc to allocate memory (omitted for brevity)
 //     cudaMalloc(&d_val, val.size() * sizeof(float));
 //     cudaMalloc(&d_colInd, colInd.size() * sizeof(int));
@@ -74,91 +125,50 @@ __global__ void sparseMatrixVecDotKernel(const float *val, const int *colInd, co
 //     cudaMemcpy(d_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice);
 //     cudaMemcpy(d_vec, vec.data(), vec.size() * sizeof(float), cudaMemcpyHostToDevice);
 //     auto sizeVec = vec.size();
-//     // Use cudaMemcpy (omitted for brevity)
+//     // 初始化 cuSPARSE
+//     cusparseHandle_t handle;
+//     cusparseCreate(&handle);
+//     // 准备矩阵描述符
+//     cusparseSpMatDescr_t matA;
+//     cusparseCreateCsr(&matA, indexPtr.size() - 1, vec.size(), val.size(),
+//                       d_indexPtr, d_colInd, d_val,
+//                       CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I,
+//                       CUSPARSE_INDEX_BASE_ZERO, CUDA_R_32F);
 
-//     // Calculate grid and block sizes
-//     int blockSize = 256; // Example block size, adjust as needed
-//     int numBlocks = (indexPtr.size() + blockSize - 1) / blockSize;
+//     // 准备向量描述符
+//     cusparseDnVecDescr_t vecX, vecY;
+//     cusparseCreateDnVec(&vecX, vec.size(), d_vec, CUDA_R_32F);
+//     cusparseCreateDnVec(&vecY, indexPtr.size() - 1, d_result, CUDA_R_32F);
 
-//     // Launch kernel
-//     sparseMatrixVecDotKernel<<<numBlocks, blockSize>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size(), vec.size());
-
-//     // Copy results back to host
+//     // 执行矩阵向量乘法
+//     float alpha = 1.0f;
+//     float beta = 0.0f;
+//     void *dBuffer = NULL;
+//     size_t bufferSize = 0;
+//     cusparseSpMV_bufferSize(handle, CUSPARSE_OPERATION_NON_TRANSPOSE,
+//                             &alpha, matA, vecX, &beta, vecY, CUDA_R_32F,
+//                             CUSPARSE_MV_ALG_DEFAULT, &bufferSize);
+//     cudaMalloc(&dBuffer, bufferSize);
+//     cusparseSpMV(handle, CUSPARSE_OPERATION_NON_TRANSPOSE,
+//                  &alpha, matA, vecX, &beta, vecY, CUDA_R_32F,
+//                  CUSPARSE_MV_ALG_DEFAULT, dBuffer);
+//     cudaGetLastError();
+//     cudaDeviceSynchronize();
+//     // 将结果复制回主机
 //     cudaMemcpy(result.data(), d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
 
-//     // Clean up, free GPU memory
+//     // 清理资源
+//     cusparseDestroySpMat(matA);
+//     cusparseDestroyDnVec(vecX);
+//     cusparseDestroyDnVec(vecY);
+//     cusparseDestroy(handle);
+//     // 省略释放 GPU 内存的代码
 //     cudaFree(d_val);
 //     cudaFree(d_colInd);
 //     cudaFree(d_indexPtr);
 //     cudaFree(d_vec);
 //     cudaFree(d_result);
 // }
-void kernelSparseMatVecdot(const std::vector<float> &val,
-                           const std::vector<int> &colInd,
-                           const std::vector<int> &indexPtr,
-                           const std::vector<float> &vec,
-                           std::vector<float> &result)
-{
-    // 省略输入检查和内存分配代码
-    float *d_val, *d_vec, *d_result;
-    int *d_colInd, *d_indexPtr;
-
-    // Use cudaMalloc to allocate memory (omitted for brevity)
-    cudaMalloc(&d_val, val.size() * sizeof(float));
-    cudaMalloc(&d_colInd, colInd.size() * sizeof(int));
-    cudaMalloc(&d_indexPtr, indexPtr.size() * sizeof(int));
-    cudaMalloc(&d_vec, vec.size() * sizeof(float));
-    cudaMalloc(&d_result, result.size() * sizeof(float));
-    // Copy data to GPU
-    cudaMemcpy(d_val, val.data(), val.size() * sizeof(float), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_colInd, colInd.data(), colInd.size() * sizeof(int), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_vec, vec.data(), vec.size() * sizeof(float), cudaMemcpyHostToDevice);
-    auto sizeVec = vec.size();
-    // 初始化 cuSPARSE
-    cusparseHandle_t handle;
-    cusparseCreate(&handle);
-
-    // 准备矩阵描述符
-    cusparseSpMatDescr_t matA;
-    cusparseCreateCsr(&matA, indexPtr.size() - 1, vec.size(), val.size(),
-                      d_indexPtr, d_colInd, d_val,
-                      CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I,
-                      CUSPARSE_INDEX_BASE_ZERO, CUDA_R_32F);
-
-    // 准备向量描述符
-    cusparseDnVecDescr_t vecX, vecY;
-    cusparseCreateDnVec(&vecX, vec.size(), d_vec, CUDA_R_32F);
-    cusparseCreateDnVec(&vecY, indexPtr.size() - 1, d_result, CUDA_R_32F);
-
-    // 执行矩阵向量乘法
-    float alpha = 1.0f;
-    float beta = 0.0f;
-    void *dBuffer = NULL;
-    size_t bufferSize = 0;
-    cusparseSpMV_bufferSize(handle, CUSPARSE_OPERATION_NON_TRANSPOSE,
-                            &alpha, matA, vecX, &beta, vecY, CUDA_R_32F,
-                            CUSPARSE_MV_ALG_DEFAULT, &bufferSize);
-    cudaMalloc(&dBuffer, bufferSize);
-    cusparseSpMV(handle, CUSPARSE_OPERATION_NON_TRANSPOSE,
-                 &alpha, matA, vecX, &beta, vecY, CUDA_R_32F,
-                 CUSPARSE_MV_ALG_DEFAULT, dBuffer);
-
-    // 将结果复制回主机
-    cudaMemcpy(result.data(), d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
-    cudaDeviceSynchronize();
-    // 清理资源
-    cusparseDestroySpMat(matA);
-    cusparseDestroyDnVec(vecX);
-    cusparseDestroyDnVec(vecY);
-    cusparseDestroy(handle);
-    // 省略释放 GPU 内存的代码
-    cudaFree(d_val);
-    cudaFree(d_colInd);
-    cudaFree(d_indexPtr);
-    cudaFree(d_vec);
-    cudaFree(d_result);
-}
 // void kernelSparseMatVecdot(const std::vector<float> &val,
 //                            const std::vector<int> &colInd,
 //                            const std::vector<int> &indexPtr,

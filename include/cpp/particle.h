@@ -55,19 +55,19 @@ struct particle2D
 class ParticleSystem
 {
 public:
-    ParticleSystem(int particles_number,bool isCuda) : num_particles(particles_number),flag(isCuda) { init_particles(); };
+    ParticleSystem(int particles_number, bool isCuda) : num_particles(particles_number), flag(isCuda) { init_particles(); };
     void randomWalk()
     {
-        for (size_t i = 0; i < 1; i += 1)
+        for (size_t i = 0; i < 2; i += 1)
         {
             std::string filename = "../data/gpu/result_" + std::to_string(i) + ".txt";
             std::ofstream out(filename);
-            
+
             startRandomWalk();
-            
+
             for (size_t j = 0; j < particlesPosition.size(); j += 3)
             {
-                out << particlesPosition[j] << "," << particlesPosition[j + 1]
+                out << particlesPosition[j] << "," << particlesPosition[j + 1] << "," << particlesPosition[j + 2]
                     << std::endl;
             }
             out.close();
@@ -79,19 +79,21 @@ private:
 
     void processParticle(int particleIndex,
                          sparseMatrix &localSparseMat);
+    void processBlock(int blockIndex, int numParticles);
     void startRandomWalk();
     void init_particles();
     void classic_random_walk(float &new_x, float &new_y);
-    void sparseMatrixVecDot(const sparseMatrix &mat,
-                            const std::vector<float> &vec,
-                            std::vector<float> &result);
+    std::vector<float> sparseMatrixVecDot(const sparseMatrix &mat,
+                                          const std::vector<float> &vec);
     std::vector<float> sparseMatrixVecDotGpu(const sparseMatrix &mat,
                                              const std::vector<float> &vec);
 
     void parallelProcessParticles();
 
     int num_particles;
-    // std::vector<sparseMatrix> localSparseMats;
+    int numBlocks;
+    std::vector<sparseMatrix> sparseMatsBlocks;
+    std::vector<std::vector<float>> particlesPositionBlocks;
     // std::vector<particle2D> particles;
     // std::vector<std::vector<float>> particlesMatrix;
     std::vector<float>
@@ -102,7 +104,7 @@ private:
     int remainParticle;
     int maxParticlesPerBlock;
     std::vector<float> Posresult;
-    bool flag=false;
+    bool flag = false;
     float time;
     // std::random_device rd;
     // std::mt19937 m_gen;
