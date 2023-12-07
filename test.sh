@@ -14,9 +14,9 @@
 #SBATCH -e with_gpu.err
 
 # Load CUDA module
-module load cuda/12.2.2  gcc/10.2 cmake/3.15.4  ninja/1.9.0
+module load cuda/11.7.1  gcc/10.2 cmake/3.15.4  ninja/1.9.0
 
-
+nvcc --version
 cd ./
 rm -rf build
 mkdir -p build
