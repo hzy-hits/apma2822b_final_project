@@ -50,9 +50,21 @@ void ParticleSystem::parallelProcessParticles()
 void ParticleSystem::startRandomWalk()
 {
     parallelProcessParticles();
-    // sparseMatrixVecDot(sparseMat, particlesPosition, Posresult);
-    particlesPosition = sparseMatrixVecDotGpu(sparseMat, particlesPosition);
-    // particlesPosition = Posresult;
+
+    if (flag)
+    {
+        particlesPosition = sparseMatrixVecDotGpu(sparseMat, particlesPosition);
+    }
+    else{
+    auto start = std::chrono::high_resolution_clock::now();
+    sparseMatrixVecDot(sparseMat, particlesPosition, Posresult);
+    particlesPosition = Posresult;
+    auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> duration = end - start;
+            std::cout << duration.count() << "ms \t"<<std::endl;
+    }
+    
+
     for (int i = 0; i < 9; i += 3)
     {
         std::cout << particlesPosition[i] << "\t" << particlesPosition[i + 1]
@@ -118,6 +130,10 @@ std::vector<float> ParticleSystem::sparseMatrixVecDotGpu(const sparseMatrix &mat
     std::vector<float> val = mat.val;
     std::vector<int> colInd = mat.colInd;
     std::vector<int> indexPtr = mat.indexPtr;
+    auto start = std::chrono::high_resolution_clock::now();
     kernelSparseMatVecdot(val, colInd, indexPtr, vec, result);
+    auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> duration = end - start;
+            std::cout << duration.count() << "ms \t"<<std::endl;
     return result;
 }

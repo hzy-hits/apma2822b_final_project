@@ -7,7 +7,7 @@
 #include "kernel.cuh"
 #include <iostream>
 #include <fstream>
-
+#include <chrono>
 struct sparseMatrix
 {
     std::vector<float> val;
@@ -55,15 +55,16 @@ struct particle2D
 class ParticleSystem
 {
 public:
-    ParticleSystem(int particles_number) : num_particles(particles_number) { init_particles(); };
+    ParticleSystem(int particles_number,bool isCuda) : num_particles(particles_number),flag(isCuda) { init_particles(); };
     void randomWalk()
     {
         for (size_t i = 0; i < 1; i += 1)
         {
             std::string filename = "../data/gpu/result_" + std::to_string(i) + ".txt";
             std::ofstream out(filename);
+            
             startRandomWalk();
-
+            
             for (size_t j = 0; j < particlesPosition.size(); j += 3)
             {
                 out << particlesPosition[j] << "," << particlesPosition[j + 1]
@@ -101,6 +102,8 @@ private:
     int remainParticle;
     int maxParticlesPerBlock;
     std::vector<float> Posresult;
+    bool flag=false;
+    float time;
     // std::random_device rd;
     // std::mt19937 m_gen;
     // std::uniform_real_distribution<float> piDistribution(0.f, 2.f * M_PI);
