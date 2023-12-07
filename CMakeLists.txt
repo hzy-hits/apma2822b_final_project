@@ -18,7 +18,8 @@ find_package(OpenMP REQUIRED)
 if(OpenMP_CXX_FOUND)
     target_link_libraries(final_project PUBLIC OpenMP::OpenMP_CXX)
 endif()
-
+find_package(CUDA REQUIRED)
+target_link_libraries(final_project PUBLIC ${CUDA_LIBRARIES} ${CUDA_cusparse_LIBRARY})
 # 设置 CUDA 架构
 set_target_properties(final_project PROPERTIES CUDA_ARCHITECTURES "75")
 

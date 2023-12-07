@@ -2,7 +2,7 @@
 #define KERNEL_CUH
 
 #include <stdio.h>
-
+#include <cusparse.h>
 #include <vector>
 
 void helloFromGPU();
