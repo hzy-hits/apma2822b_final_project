@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/root/programing/APMA2822B/final_project/apma2822b_final_project/build",
+  "command": "/usr/bin/g++ -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include/cuda -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include/cpp -g -Wall -fopenmp -o CMakeFiles/final_project.dir/src/main.cpp.o -c /root/programing/APMA2822B/final_project/apma2822b_final_project/src/main.cpp",
+  "file": "/root/programing/APMA2822B/final_project/apma2822b_final_project/src/main.cpp"
+},
+{
+  "directory": "/root/programing/APMA2822B/final_project/apma2822b_final_project/build",
+  "command": "/usr/bin/g++ -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include/cuda -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include/cpp -g -Wall -fopenmp -o CMakeFiles/final_project.dir/src/particle.cpp.o -c /root/programing/APMA2822B/final_project/apma2822b_final_project/src/particle.cpp",
+  "file": "/root/programing/APMA2822B/final_project/apma2822b_final_project/src/particle.cpp"
+},
+{
+  "directory": "/root/programing/APMA2822B/final_project/apma2822b_final_project/build",
+  "command": "/usr/bin/nvcc -forward-unknown-to-host-compiler -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include/cuda -I/root/programing/APMA2822B/final_project/apma2822b_final_project/include/cpp -g --generate-code=arch=compute_75,code=[compute_75,sm_75] -x cu -c /root/programing/APMA2822B/final_project/apma2822b_final_project/cuda/kernel.cu -o CMakeFiles/final_project.dir/cuda/kernel.cu.o",
+  "file": "/root/programing/APMA2822B/final_project/apma2822b_final_project/cuda/kernel.cu"
+}
+]
