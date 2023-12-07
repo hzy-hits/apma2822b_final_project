@@ -4,13 +4,27 @@ void ParticleSystem::init_particles()
 
 {
 
-    // maxParticlesPerBlock = 2048;
+    maxParticlesPerBlock = 1024 * 32;
+    numBlocks = num_particles / maxParticlesPerBlock;
+    remainParticle = num_particles % maxParticlesPerBlock;
+
     Posresult.reserve(3 * num_particles);
+    particlesPosition.reserve(3 * num_particles);
+
+    // sparseMatsBlocks.reserve(counter);
+    // particlesPositionBlocks.reserve(counter);
+    for (auto &element : particlesPositionBlocks)
+    {
+        element.reserve(3 * maxParticlesPerBlock);
+    }
+    {
+        /* code */
+    }
+
     step = 400;
     maxThreads = omp_get_max_threads();
     // localSparseMats.resize(omp_get_max_threads());
     // remainParticle = num_particles % maxParticlesPerBlock;
-    particlesPosition.reserve(3 * num_particles);
     for (int i = 0; i < num_particles; i++)
     {
         particlesPosition.push_back(0);
@@ -18,53 +32,89 @@ void ParticleSystem::init_particles()
         particlesPosition.push_back(1);
     }
 }
-
 void ParticleSystem::parallelProcessParticles()
 {
-    sparseMat.clear();
-    std::vector<sparseMatrix> localSparseMats(omp_get_max_threads());
-
-#pragma omp parallel
+    for (int i = 0; i < numBlocks; i++)
     {
-        int thread_id = omp_get_thread_num();
-        auto &localSparseMat = localSparseMats[thread_id];
-        localSparseMat.indexPtr.push_back(0);
-
-#pragma omp for nowait
-        for (int i = 0; i < num_particles; i++)
-        {
-            processParticle(i, localSparseMat);
-        }
+        processBlock(i, maxParticlesPerBlock);
     }
-    for (auto &localMat : localSparseMats)
+    if (remainParticle > 0)
     {
-        if (sparseMat.indexPtr.size() == 0)
-        {
-            sparseMat = localMat;
-        }
-
-        sparseMat.merge(localMat);
+        processBlock(numBlocks, remainParticle);
     }
 }
+void ParticleSystem::processBlock(int blockIndex, int numParticles)
+{
 
+    int startIdx = blockIndex * maxParticlesPerBlock * 3;
+    int endIdx = std::min(startIdx + numParticles * 3, static_cast<int>(particlesPosition.size()));
+
+    std::vector<float> localParticlesPosition(particlesPosition.begin() + startIdx, particlesPosition.begin() + endIdx);
+    particlesPositionBlocks.push_back(localParticlesPosition);
+
+    sparseMatrix localSparseMat;
+    localSparseMat.indexPtr.push_back(0);
+
+    for (int j = 0; j < numParticles; j++)
+    {
+        processParticle(j, localSparseMat);
+    }
+
+    sparseMatsBlocks.push_back(localSparseMat);
+}
 void ParticleSystem::startRandomWalk()
 {
     parallelProcessParticles();
 
     if (flag)
     {
-        particlesPosition = sparseMatrixVecDotGpu(sparseMat, particlesPosition);
+        int counter = remainParticle == 0 ? numBlocks : numBlocks + 1;
+#pragma omp parallel
+        {
+            std::vector<float> localPosresult;
+#pragma omp for nowait
+            for (int i = 0; i < counter; i++)
+            {
+                auto &element1 = sparseMatsBlocks[i];
+                auto &element2 = particlesPositionBlocks[i];
+                std::vector<float> localNewPos = sparseMatrixVecDotGpu(element1, element2);
+                localPosresult.insert(localPosresult.end(), localNewPos.begin(), localNewPos.end());
+            }
+#pragma omp critical
+            Posresult.insert(Posresult.end(), localPosresult.begin(), localPosresult.end());
+        }
+        particlesPosition = Posresult;
+        Posresult.clear();
+        sparseMatsBlocks.clear();
+        particlesPositionBlocks.clear();
     }
-    else{
-    auto start = std::chrono::high_resolution_clock::now();
-    sparseMatrixVecDot(sparseMat, particlesPosition, Posresult);
-    particlesPosition = Posresult;
-    auto end = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double, std::milli> duration = end - start;
-            std::cout << duration.count() << "ms \t"<<std::endl;
-    }
-    
+    else
+    {
+        int counter = sparseMatsBlocks.size();
 
+#pragma omp parallel
+        {
+            std::vector<float> localPosresult;
+#pragma omp for nowait
+            for (int i = 0; i < counter; i++)
+            {
+                const auto &element1 = sparseMatsBlocks[i];
+                const auto &element2 = particlesPositionBlocks[i];
+                auto start = std::chrono::high_resolution_clock::now();
+                std::vector<float> localNewPos = sparseMatrixVecDot(element1, element2);
+                localPosresult.insert(localPosresult.end(), localNewPos.begin(), localNewPos.end());
+                auto end = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double, std::milli> duration = end - start;
+                std::cout << duration.count() << "ms \t" << std::endl;
+            }
+#pragma omp critical
+            Posresult.insert(Posresult.end(), localPosresult.begin(), localPosresult.end());
+        }
+        particlesPosition = Posresult;
+        Posresult.clear();
+        sparseMatsBlocks.clear();
+        particlesPositionBlocks.clear();
+    }
     for (int i = 0; i < 9; i += 3)
     {
         std::cout << particlesPosition[i] << "\t" << particlesPosition[i + 1]
@@ -81,12 +131,12 @@ void ParticleSystem::processParticle(int particleIndex, sparseMatrix &localSpars
     int colOffset = 3 * particleIndex;
     float new_x, new_y;
     classic_random_walk(new_x, new_y);
+
     localSparseMat.colInd.push_back(0 + colOffset);
     localSparseMat.val.push_back(1);
     localSparseMat.colInd.push_back(2 + colOffset);
     localSparseMat.val.push_back(new_x);
     localSparseMat.indexPtr.push_back(localSparseMat.val.size());
-
     localSparseMat.colInd.push_back(1 + colOffset);
     localSparseMat.val.push_back(1);
     localSparseMat.colInd.push_back(2 + colOffset);
@@ -107,11 +157,10 @@ void ParticleSystem::classic_random_walk(float &new_x, float &new_y)
     new_x = cos(random);
     new_y = sin(random);
 }
-void ParticleSystem::sparseMatrixVecDot(const sparseMatrix &mat,
-                                        const std::vector<float> &vec,
-                                        std::vector<float> &result)
+std::vector<float> ParticleSystem::sparseMatrixVecDot(const sparseMatrix &mat,
+                                                      const std::vector<float> &vec)
 {
-    result.clear();
+    std::vector<float> result;
     result.resize(mat.indexPtr.size() - 1, 0.0f);
 #pragma omp parallel for
     for (size_t i = 0; i < mat.indexPtr.size() - 1; i++)
@@ -121,6 +170,8 @@ void ParticleSystem::sparseMatrixVecDot(const sparseMatrix &mat,
             result[i] += mat.val[j] * vec[mat.colInd[j]];
         }
     }
+    // result.push_back(1);
+    return result;
 }
 std::vector<float> ParticleSystem::sparseMatrixVecDotGpu(const sparseMatrix &mat,
                                                          const std::vector<float> &vec)
@@ -130,10 +181,12 @@ std::vector<float> ParticleSystem::sparseMatrixVecDotGpu(const sparseMatrix &mat
     std::vector<float> val = mat.val;
     std::vector<int> colInd = mat.colInd;
     std::vector<int> indexPtr = mat.indexPtr;
-    auto start = std::chrono::high_resolution_clock::now();
+    // std::cout << "indexPtr.size():" << indexPtr.size() << std::endl;
+    // std::cout << "val.size():" << val.size() << std::endl;
+    // std::cout << "colInd.size():" << colInd.size() << std::endl;
+    // std::cout << "vec.size():" << vec.size() << std::endl;
+
     kernelSparseMatVecdot(val, colInd, indexPtr, vec, result);
-    auto end = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double, std::milli> duration = end - start;
-            std::cout << duration.count() << "ms \t"<<std::endl;
+
     return result;
 }

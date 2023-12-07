@@ -8,7 +8,7 @@ int main()
 
     std::cout << "Hello, World!" << std::endl;
 
-    ParticleSystem ps(1024 * 24, true);
+    ParticleSystem ps(1024 * 24 * 16, false);
 
     ps.randomWalk();
     std::cout << "Bye, World!" << std::endl;
