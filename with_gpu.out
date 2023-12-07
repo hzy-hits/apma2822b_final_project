@@ -48,3 +48,9 @@ Wed Dec  6 22:10:27 2023
 [2/4] Building CXX object CMakeFiles/final_project.dir/src/particle.cpp.o
 [3/4] Building CUDA object CMakeFiles/final_project.dir/cuda/kernel.cu.o
 [4/4] Linking CXX executable final_project
+Hello, World!
+307.597ms 	
+0	0	0
+0	0	0
+0	0	0
+Bye, World!
