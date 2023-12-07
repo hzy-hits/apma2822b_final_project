@@ -232,3 +232,8 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
 //     cudaFree(d_vec);
 //     cudaFree(d_result);
 // }
+//     cudaFree(d_colInd);
+//     cudaFree(d_indexPtr);
+//     cudaFree(d_vec);
+//     cudaFree(d_result);
+// }
