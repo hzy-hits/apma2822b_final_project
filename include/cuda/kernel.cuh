@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <cusparse.h>
 #include <vector>
-
+#include <chrono>
 void helloFromGPU();
 void kernelSparseMatVecdot(const std::vector<float> &val,
                            const std::vector<int> &colInd,

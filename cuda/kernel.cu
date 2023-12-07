@@ -46,7 +46,7 @@ __global__ void sparseMatrixVecDotKernel(const float *val, const int *colInd, co
     // {
     //     sharedVec[threadIdx.x] = vec[threadIdx.x];
     // }
-    // __syncthreads(); // 确保所有数据都加载到 sharedVec 中
+    // __syncthreads(); // 确保所有数据都加载到 sharedVec
 
     if (row < numRows)
     {
@@ -71,7 +71,7 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
     int *d_colInd, *d_indexPtr;
     int sharedMemPerBlock;
     cudaDeviceGetAttribute(&sharedMemPerBlock, cudaDevAttrMaxSharedMemoryPerBlock, 0);
-    
+
     // Use cudaMalloc to allocate memory (omitted for brevity)
     cudaMalloc(&d_val, val.size() * sizeof(float));
     cudaMalloc(&d_colInd, colInd.size() * sizeof(int));
@@ -92,11 +92,14 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
     int numBlocks = (indexPtr.size() + blockSize - 1) / blockSize;
 
     // Launch kernel
+    auto start = std::chrono::steady_clock::now();
     sparseMatrixVecDotKernel<<<numBlocks, blockSize>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
 
     // Copy results back to host
     cudaMemcpy(result.data(), d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
 
+    auto end = std::chrono::steady_clock::now();
+    printf("kernelSparseMatVecdot time: %f ms\n", std::chrono::duration<double, std::milli>(end - start).count());
     // Clean up, free GPU memory
     cudaFree(d_val);
     cudaFree(d_colInd);

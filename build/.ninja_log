@@ -1,8 +1,8 @@
 # ninja log v5
-469	676	1701974930452450432	final_project	cf73a76e449902e9
-0	895	1701974823832475523	CMakeFiles/final_project.dir/cuda/kernel.cu.o	e0bd802696c7eec0
-0	604	1701974861112466783	CMakeFiles/final_project.dir/src/particle.cpp.o	1f562711a704c460
-0	469	1701974930242450482	CMakeFiles/final_project.dir/src/main.cpp.o	9fd2a4e9820cb63b
-1	435	1701975149842394153	CMakeFiles/final_project.dir/src/main.cpp.o	9fd2a4e9820cb63b
-1	572	1701975149982394116	CMakeFiles/final_project.dir/src/particle.cpp.o	1f562711a704c460
-572	793	1701975150202394058	final_project	cf73a76e449902e9
+652	907	1701975765512248007	final_project	cf73a76e449902e9
+4	7698	1701975613922284849	CMakeFiles/final_project.dir/cuda/kernel.cu.o	e0bd802696c7eec0
+2	652	1701975765252248072	CMakeFiles/final_project.dir/src/particle.cpp.o	1f562711a704c460
+2	503	1701975765102248108	CMakeFiles/final_project.dir/src/main.cpp.o	9fd2a4e9820cb63b
+0	419	1701976031512180779	CMakeFiles/final_project.dir/src/main.cpp.o	9fd2a4e9820cb63b
+0	559	1701976031652180738	CMakeFiles/final_project.dir/src/particle.cpp.o	1f562711a704c460
+559	825	1701976031922180660	final_project	cf73a76e449902e9

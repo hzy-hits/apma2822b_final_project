@@ -4,7 +4,7 @@ void ParticleSystem::init_particles()
 
 {
 
-    maxParticlesPerBlock = 1024 * 8;
+    maxParticlesPerBlock = 1024 * 32;
     numBlocks = num_particles / maxParticlesPerBlock;
     remainParticle = num_particles % maxParticlesPerBlock;
 
@@ -69,7 +69,6 @@ void ParticleSystem::startRandomWalk()
     if (flag)
     {
         int counter = remainParticle == 0 ? numBlocks : numBlocks + 1;
-        auto start = std::chrono::high_resolution_clock::now();
 #pragma omp parallel
         {
             std::vector<float> localPosresult;
@@ -88,14 +87,11 @@ void ParticleSystem::startRandomWalk()
         Posresult.clear();
         sparseMatsBlocks.clear();
         particlesPositionBlocks.clear();
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std::milli> duration = end - start;
-        std::cout << duration.count() << "ms \t" << std::endl;
     }
     else
     {
         int counter = sparseMatsBlocks.size();
-        auto start = std::chrono::high_resolution_clock::now();
+
 #pragma omp parallel
         {
             std::vector<float> localPosresult;
@@ -104,8 +100,12 @@ void ParticleSystem::startRandomWalk()
             {
                 const auto &element1 = sparseMatsBlocks[i];
                 const auto &element2 = particlesPositionBlocks[i];
+                auto start = std::chrono::high_resolution_clock::now();
                 std::vector<float> localNewPos = sparseMatrixVecDot(element1, element2);
                 localPosresult.insert(localPosresult.end(), localNewPos.begin(), localNewPos.end());
+                auto end = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double, std::milli> duration = end - start;
+                std::cout << duration.count() << "ms \t" << std::endl;
             }
 #pragma omp critical
             Posresult.insert(Posresult.end(), localPosresult.begin(), localPosresult.end());
@@ -114,9 +114,6 @@ void ParticleSystem::startRandomWalk()
         Posresult.clear();
         sparseMatsBlocks.clear();
         particlesPositionBlocks.clear();
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std::milli> duration = end - start;
-        std::cout << duration.count() << "ms \t" << std::endl;
     }
     for (int i = 0; i < 9; i += 3)
     {
