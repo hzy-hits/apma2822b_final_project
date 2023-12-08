@@ -61,7 +61,7 @@ public:
     ParticleSystem(int particles_number, bool isCuda) : num_particles(particles_number), flag(isCuda) { init_particles(); };
     void randomWalk()
     {
-        for (size_t flag = 0; flag < step; flag += 1)
+        for (size_t flag = 0; flag < 1; flag += 1)
         {
             grid.resize(colMat * colMat, 0);
             auto start = std::chrono::high_resolution_clock::now();
@@ -69,12 +69,15 @@ public:
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double, std::milli> duration = end - start;
             std::cout << "Computing time: " << duration.count() << "ms \t" << std::endl;
-
+            std::string filename1 = "../data/gpu/data_" + std::to_string(flag) + ".txt";
+            std::ofstream out1(filename1);
             for (size_t j = 0; j < particlesPosition.size(); j += 3)
             {
+                out1 << particlesPosition[j] << " " << particlesPosition[j + 1] << " " << particlesPosition[j + 2] << std::endl;
+
                 dealwithGrid(particlesPosition[j], particlesPosition[j + 1]);
             }
-
+            out1.close();
             std::string filename = "../data/gpu/result_" + std::to_string(flag) + ".txt";
             std::ofstream out(filename);
             for (int col = 0; col < colMat; col++)
@@ -95,6 +98,20 @@ private:
     sparseMatrix sparseMat;
     void processParticle(int particleIndex,
                          sparseMatrix &localSparseMat);
+    float bilinearInterpolate(float q11, float q12, float q21, float q22, float x1, float x2, float y1, float y2, float x, float y)
+    {
+        float x2x1 = x2 - x1;
+        float y2y1 = y2 - y1;
+        float x2x = x2 - x;
+        float y2y = y2 - y;
+        float yy1 = y - y1;
+        float xx1 = x - x1;
+
+        return q11 * x2x * y2y / (x2x1 * y2y1) +
+               q21 * xx1 * y2y / (x2x1 * y2y1) +
+               q12 * x2x * yy1 / (x2x1 * y2y1) +
+               q22 * xx1 * yy1 / (x2x1 * y2y1);
+    }
     void processBlock(int blockIndex, int numParticles);
     void startRandomWalk();
     void init_particles();
@@ -106,19 +123,41 @@ private:
                                              const std::vector<float> &vec);
 
     void parallelProcessParticles();
-    void dealwithGrid(float x, float y)
+    void dealwithGrid(float particleX, float particleY)
     {
-        int downNewX = int(2 * x + 800);
-        int downNewY = int(2 * y + 800);
+        // 根据粒子的原始坐标，将其移动到矩阵中心
+        particleX += 801;
+        particleY += 801;
 
-        // float alpha = 2 * x + 800 - downNewX;
-        // float beta = 2 * y + 800 - downNewY;
-        // int upNewX = downNewX + 1;
-        // int upNewY = downNewY + 1;
-        int idx = downNewX * colMat + downNewY;
-        grid[idx] = grid[idx] + 1;
+        // 找到粒子周围的四个格点
+        int x1 = static_cast<int>(particleX);
+        int y1 = static_cast<int>(particleY);
+        int x2 = x1 + 1;
+        int y2 = y1 + 1;
+
+        // 检查粒子是否在 grid 的边界附近
+        if (x1 < 0 || y1 < 0 || x2 >= colMat || y2 >= colMat)
+        {
+            std::cout << "Particle coordinates are out of grid bounds" << std::endl;
+            return;
+        }
+
+        // 计算每个格点的权重
+        float weight11 = (x2 - particleX) * (y2 - particleY);
+        float weight21 = (particleX - x1) * (y2 - particleY);
+        float weight12 = (x2 - particleX) * (particleY - y1);
+        float weight22 = (particleX - x1) * (particleY - y1);
+
+        // 更新每个格点的值，同时考虑边界情况
+        if (x1 >= 0 && y1 >= 0 && x1 < colMat && y1 < colMat)
+            grid[x1 * colMat + y1] += weight11;
+        if (x2 >= 0 && y1 >= 0 && x2 < colMat && y1 < colMat)
+            grid[x2 * colMat + y1] += weight21;
+        if (x1 >= 0 && y2 >= 0 && x1 < colMat && y2 < colMat)
+            grid[x1 * colMat + y2] += weight12;
+        if (x2 >= 0 && y2 >= 0 && x2 < colMat && y2 < colMat)
+            grid[x2 * colMat + y2] += weight22;
     }
-
     int num_particles;
     int numBlocks;
     std::vector<sparseMatrix> sparseMatsBlocks;

@@ -4,7 +4,7 @@ void ParticleSystem::init_particles()
 
 {
 
-    maxParticlesPerBlock = 1024 * 4;
+    maxParticlesPerBlock = 1024 * 32;
     numBlocks = num_particles / maxParticlesPerBlock;
     remainParticle = num_particles % maxParticlesPerBlock;
 
