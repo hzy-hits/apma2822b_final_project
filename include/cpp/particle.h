@@ -8,6 +8,9 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include <unordered_map>
+#include <utility>
+using GridCell = std::pair<int, int>;
 struct sparseMatrix
 {
     std::vector<float> val;
@@ -60,36 +63,61 @@ public:
     {
         for (size_t i = 0; i < 2; i += 1)
         {
-            std::string filename = "../data/gpu/result_" + std::to_string(i) + ".txt";
-            std::ofstream out(filename);
 
+            auto start = std::chrono::high_resolution_clock::now();
             startRandomWalk();
-
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> duration = end - start;
+            std::cout << "Computing time: " << duration.count() << "ms \t" << std::endl;
+#pragma omp parallel for
             for (size_t j = 0; j < particlesPosition.size(); j += 3)
             {
-                out << particlesPosition[j] << "," << particlesPosition[j + 1] << "," << particlesPosition[j + 2]
-                    << std::endl;
+                dealwithGrid(particlesPosition[j], particlesPosition[j + 1]);
+            }
+
+            std::string filename = "../data/gpu/result_" + std::to_string(i) + ".txt";
+            std::ofstream out(filename);
+            for (size_t i = 0; i < colMat; i++)
+            {
+                for (size_t j = 0; j < colMat; j++)
+                {
+                    out << grid[i * colMat + j] << " ";
+                }
+                out << std::endl;
             }
             out.close();
+            reSetGrid();
         }
     }
 
 private:
     sparseMatrix sparseMat;
-
     void processParticle(int particleIndex,
                          sparseMatrix &localSparseMat);
     void processBlock(int blockIndex, int numParticles);
     void startRandomWalk();
     void init_particles();
     void classic_random_walk(float &new_x, float &new_y);
+
     std::vector<float> sparseMatrixVecDot(const sparseMatrix &mat,
                                           const std::vector<float> &vec);
     std::vector<float> sparseMatrixVecDotGpu(const sparseMatrix &mat,
                                              const std::vector<float> &vec);
 
     void parallelProcessParticles();
-
+    void dealwithGrid(float x, float y)
+    {
+        int newX = round(2 * x + 800);
+        int newY = round(2 * y + 800);
+        grid[newX * colMat + newY] += 1;
+    }
+    void reSetGrid()
+    {
+        for (int i = 0; i < grid.size(); i++)
+        {
+            grid[i] = 0;
+        }
+    }
     int num_particles;
     int numBlocks;
     std::vector<sparseMatrix> sparseMatsBlocks;
@@ -105,7 +133,9 @@ private:
     int maxParticlesPerBlock;
     std::vector<float> Posresult;
     bool flag = false;
-    float time;
+
+    std::vector<int> grid{2563201, 0};
+    int colMat = 1601;
     // std::random_device rd;
     // std::mt19937 m_gen;
     // std::uniform_real_distribution<float> piDistribution(0.f, 2.f * M_PI);

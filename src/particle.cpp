@@ -4,7 +4,7 @@ void ParticleSystem::init_particles()
 
 {
 
-    maxParticlesPerBlock = 1024 * 32;
+    maxParticlesPerBlock = 1024 * 4;
     numBlocks = num_particles / maxParticlesPerBlock;
     remainParticle = num_particles % maxParticlesPerBlock;
 
@@ -13,14 +13,6 @@ void ParticleSystem::init_particles()
 
     // sparseMatsBlocks.reserve(counter);
     // particlesPositionBlocks.reserve(counter);
-    for (auto &element : particlesPositionBlocks)
-    {
-        element.reserve(3 * maxParticlesPerBlock);
-    }
-    {
-        /* code */
-    }
-
     step = 400;
     maxThreads = omp_get_max_threads();
     // localSparseMats.resize(omp_get_max_threads());
@@ -105,7 +97,7 @@ void ParticleSystem::startRandomWalk()
                 localPosresult.insert(localPosresult.end(), localNewPos.begin(), localNewPos.end());
                 auto end = std::chrono::high_resolution_clock::now();
                 std::chrono::duration<double, std::milli> duration = end - start;
-                std::cout << duration.count() << "ms \t" << std::endl;
+                std::cout << "kernel time: " << duration.count() << "ms \t" << std::endl;
             }
 #pragma omp critical
             Posresult.insert(Posresult.end(), localPosresult.begin(), localPosresult.end());
@@ -117,7 +109,8 @@ void ParticleSystem::startRandomWalk()
     }
     for (int i = 0; i < 9; i += 3)
     {
-        std::cout << particlesPosition[i] << "\t" << particlesPosition[i + 1]
+        std::cout << "result sample: " << std::endl
+                  << particlesPosition[i] << "\t" << particlesPosition[i + 1]
                   << "\t" << particlesPosition[i + 2]
                   << std::endl;
         // std::cout << Posresult[i] << "\t" << Posresult[i + 1]

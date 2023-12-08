@@ -12,7 +12,7 @@ file(GLOB CUDA_SOURCES "cuda/*.cu")
 
 # 创建可执行文件
 add_executable(final_project ${CPP_SOURCES} ${CUDA_SOURCES})
-
+target_compile_options(final_project PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-Xptxas -dlcm=ca>)
 # 查找并链接 OpenMP
 find_package(OpenMP REQUIRED)
 if(OpenMP_CXX_FOUND)

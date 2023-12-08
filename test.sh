@@ -2,14 +2,14 @@
 
 # Request a GPU partition node and access to 1 GPU
 
-#SBATCH -p gpu --gres=gpu:1 --gres-flags=enforce-binding
+
 # Ensures all allocated cores are on the same node
 #SBATCH -N 1
-
+#SBATCH -p gpu --gres=gpu:1 --gres-flags=enforce-binding
 # Request 1 CPU core
-#SBATCH -n 2
+#SBATCH -n 4
 
-#SBATCH -t 00:30:00
+#SBATCH -t 01:30:00
 #SBATCH -o with_gpu.out
 #SBATCH -e with_gpu.err
 
@@ -21,6 +21,7 @@ cd ./
 rm -rf build
 mkdir -p build
 cd build
+
 nvidia-smi 
 cmake .. -G Ninja
 ninja

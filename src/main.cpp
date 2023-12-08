@@ -1,16 +1,18 @@
 #include <iostream>
-
+#include <thread>
 #include "kernel.cuh"
 #include "particle.h"
-
+#include <chrono>
 int main()
 {
 
     std::cout << "Hello, World!" << std::endl;
-
-    ParticleSystem ps(1024 * 24 * 16, false);
-
+    unsigned int n = std::thread::hardware_concurrency();
+    std::cout << "Number of threads: " << n << std::endl;
+    ParticleSystem ps(1024 * 4, true);
     ps.randomWalk();
+
+
     std::cout << "Bye, World!" << std::endl;
     return 0;
 }

@@ -41,19 +41,19 @@ __global__ void sparseMatrixVecDotKernel(const float *val, const int *colInd, co
     int row = blockIdx.x * blockDim.x + threadIdx.x;
 
     // 使用共享内存来存储 vec 向量（如果大小适合）
-    // extern __shared__ float sharedVec[];
-    // if (threadIdx.x < vecSize)
-    // {
-    //     sharedVec[threadIdx.x] = vec[threadIdx.x];
-    // }
-    // __syncthreads(); // 确保所有数据都加载到 sharedVec
+    extern __shared__ float sharedVec[];
+    if (threadIdx.x < vecSize)
+    {
+        sharedVec[threadIdx.x] = vec[threadIdx.x];
+    }
+    __syncthreads(); // 确保所有数据都加载到 sharedVec
 
     if (row < numRows)
     {
         float dotProduct = 0.0f;
         for (int j = indexPtr[row]; j < indexPtr[row + 1]; j++)
-        {
-            dotProduct += val[j] * vec[colInd[j]];
+        {   
+            dotProduct += val[j] * sharedVec[colInd[j]];
         }
         result[row] = dotProduct;
     }
@@ -69,8 +69,13 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
     // Allocate memory on GPU
     float *d_val, *d_vec, *d_result;
     int *d_colInd, *d_indexPtr;
-    int sharedMemPerBlock;
-    cudaDeviceGetAttribute(&sharedMemPerBlock, cudaDevAttrMaxSharedMemoryPerBlock, 0);
+
+    const int numParticles=(indexPtr.size() - 1)/3;
+    const int fixedSize = 4 * 1024;
+
+
+    int mStream=numParticles/fixedSize;
+    int remainNum=numParticles%fixedSize;
 
     // Use cudaMalloc to allocate memory (omitted for brevity)
     cudaMalloc(&d_val, val.size() * sizeof(float));
@@ -78,12 +83,14 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
     cudaMalloc(&d_indexPtr, indexPtr.size() * sizeof(int));
     cudaMalloc(&d_vec, vec.size() * sizeof(float));
     cudaMalloc(&d_result, result.size() * sizeof(float));
+
     // Copy data to GPU
 
     cudaMemcpy(d_val, val.data(), val.size() * sizeof(float), cudaMemcpyHostToDevice);
     cudaMemcpy(d_colInd, colInd.data(), colInd.size() * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(d_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(d_vec, vec.data(), vec.size() * sizeof(float), cudaMemcpyHostToDevice);
+
     auto sizeVec = vec.size();
     // Use cudaMemcpy (omitted for brevity)
 
@@ -93,7 +100,7 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
 
     // Launch kernel
     auto start = std::chrono::steady_clock::now();
-    sparseMatrixVecDotKernel<<<numBlocks, blockSize>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
+    sparseMatrixVecDotKernel<<<numBlocks, blockSize, sizeVec * sizeof(float)>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
 
     // Copy results back to host
     cudaMemcpy(result.data(), d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
