@@ -1,5 +1,5 @@
-/root/programing/APMA2822B/final_project/apma2822b_final_project/build/CMakeFiles/final_project.dir
-/root/programing/APMA2822B/final_project/apma2822b_final_project/build/CMakeFiles/package.dir
-/root/programing/APMA2822B/final_project/apma2822b_final_project/build/CMakeFiles/package_source.dir
-/root/programing/APMA2822B/final_project/apma2822b_final_project/build/CMakeFiles/edit_cache.dir
-/root/programing/APMA2822B/final_project/apma2822b_final_project/build/CMakeFiles/rebuild_cache.dir
+/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/build/CMakeFiles/rebuild_cache.dir
+/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/build/CMakeFiles/edit_cache.dir
+/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/build/CMakeFiles/final_project.dir
+/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/build/CMakeFiles/package_source.dir
+/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/build/CMakeFiles/package.dir

@@ -4,7 +4,7 @@ void ParticleSystem::init_particles()
 
 {
 
-    maxParticlesPerBlock = 1024 * 4;
+    maxParticlesPerBlock = 1024 * 64;
     numBlocks = num_particles / maxParticlesPerBlock;
     remainParticle = num_particles % maxParticlesPerBlock;
 
@@ -13,7 +13,7 @@ void ParticleSystem::init_particles()
 
     // sparseMatsBlocks.reserve(counter);
     // particlesPositionBlocks.reserve(counter);
-    step = 400;
+    step = 100;
     maxThreads = omp_get_max_threads();
     // localSparseMats.resize(omp_get_max_threads());
     // remainParticle = num_particles % maxParticlesPerBlock;
