@@ -40,7 +40,6 @@ __global__ void sparseMatrixVecDotKernel(const float *val, const int *colInd, co
 {
     int row = blockIdx.x * blockDim.x + threadIdx.x;
 
-    // // 使用共享内存来存储 vec 向量（如果大小适合）
     // extern __shared__ float sharedVec[];
     // if (threadIdx.x < vecSize)
     // {
@@ -64,52 +63,144 @@ void kernelSparseMatVecdot(const std::vector<float> &val,
                            const std::vector<float> &vec,
                            std::vector<float> &result)
 {
-    // Check for valid inputs (omitted for brevity)
-
     // Allocate memory on GPU
     float *d_val, *d_vec, *d_result;
     int *d_colInd, *d_indexPtr;
 
-    const int numParticles = (indexPtr.size() - 1) / 3;
-    const int fixedSize = 4 * 1024;
+    // Allocate pinned memory on host
+    float *h_val, *h_vec, *h_result;
+    int *h_colInd, *h_indexPtr;
+    // int max_particles = 1024;
+    // int group_size = (indexPtr.size() - 1) / (1024 * 3);
 
-    // Use cudaMalloc to allocate memory (omitted for brevity)
+    cudaMallocHost(&h_val, val.size() * sizeof(float));
+    cudaMallocHost(&h_colInd, colInd.size() * sizeof(int));
+    cudaMallocHost(&h_indexPtr, indexPtr.size() * sizeof(int));
+    cudaMallocHost(&h_vec, vec.size() * sizeof(float));
+    cudaMallocHost(&h_result, result.size() * sizeof(float));
+
+    // Copy data to pinned memory
+    memcpy(h_val, val.data(), val.size() * sizeof(float));
+    memcpy(h_colInd, colInd.data(), colInd.size() * sizeof(int));
+    memcpy(h_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int));
+    memcpy(h_vec, vec.data(), vec.size() * sizeof(float));
+
+    // Allocate memory on GPU
     cudaMalloc(&d_val, val.size() * sizeof(float));
     cudaMalloc(&d_colInd, colInd.size() * sizeof(int));
     cudaMalloc(&d_indexPtr, indexPtr.size() * sizeof(int));
     cudaMalloc(&d_vec, vec.size() * sizeof(float));
     cudaMalloc(&d_result, result.size() * sizeof(float));
 
-    // Copy data to GPU
+    // Create a CUDA stream
+    cudaStream_t stream;
+    cudaStreamCreate(&stream);
 
-    cudaMemcpy(d_val, val.data(), val.size() * sizeof(float), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_colInd, colInd.data(), colInd.size() * sizeof(int), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_vec, vec.data(), vec.size() * sizeof(float), cudaMemcpyHostToDevice);
-
-    auto sizeVec = vec.size();
-    // Use cudaMemcpy (omitted for brevity)
+    // Copy data from pinned memory to GPU using the stream
+    cudaMemcpyAsync(d_val, h_val, val.size() * sizeof(float), cudaMemcpyHostToDevice, stream);
+    cudaMemcpyAsync(d_colInd, h_colInd, colInd.size() * sizeof(int), cudaMemcpyHostToDevice, stream);
+    cudaMemcpyAsync(d_indexPtr, h_indexPtr, indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice, stream);
+    cudaMemcpyAsync(d_vec, h_vec, vec.size() * sizeof(float), cudaMemcpyHostToDevice, stream);
 
     // Calculate grid and block sizes
     int blockSize = 256; // Example block size, adjust as needed
     int numBlocks = (indexPtr.size() + blockSize - 1) / blockSize;
+    auto start = std::chrono::high_resolution_clock::now();
+    // Launch kernel in the stream
+    sparseMatrixVecDotKernel<<<numBlocks, blockSize, 1024 * 3 * sizeof(float), stream>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> duration = end - start;
+    printf("kernel time: %f ms\n", duration.count());
+    // Copy results back to pinned memory using the stream
+    cudaMemcpyAsync(h_result, d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost, stream);
 
-    // Launch kernel
-    auto start = std::chrono::steady_clock::now();
-    sparseMatrixVecDotKernel<<<numBlocks, blockSize>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
+    // Synchronize the stream
+    cudaStreamSynchronize(stream);
 
-    // Copy results back to host
-    cudaMemcpy(result.data(), d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
+    // Copy data from pinned memory to result vector
+    memcpy(result.data(), h_result, result.size() * sizeof(float));
 
-    auto end = std::chrono::steady_clock::now();
-    printf("kernelSparseMatVecdot time: %f ms\n", std::chrono::duration<double, std::milli>(end - start).count());
-    // Clean up, free GPU memory
+    // Clean up, free GPU memory, and destroy the stream
     cudaFree(d_val);
     cudaFree(d_colInd);
     cudaFree(d_indexPtr);
     cudaFree(d_vec);
     cudaFree(d_result);
+    cudaFreeHost(h_val);
+    cudaFreeHost(h_colInd);
+    cudaFreeHost(h_indexPtr);
+    cudaFreeHost(h_vec);
+    cudaFreeHost(h_result);
+    cudaStreamDestroy(stream);
 }
+// void kernelSparseMatVecdot(const std::vector<float> &val,
+//                            const std::vector<int> &colInd,
+//                            const std::vector<int> &indexPtr,
+//                            const std::vector<float> &vec,
+//                            std::vector<float> &result)
+// {
+//     // Check for valid inputs (omitted for brevity)
+
+//     // Allocate memory on GPU
+//     float *d_val, *d_vec, *d_result;
+//     int *d_colInd, *d_indexPtr;
+
+//     // Allocate pinned memory on host
+//     float *h_val, *h_vec, *h_result;
+//     int *h_colInd, *h_indexPtr;
+
+//     cudaMallocHost(&h_val, val.size() * sizeof(float));
+//     cudaMallocHost(&h_colInd, colInd.size() * sizeof(int));
+//     cudaMallocHost(&h_indexPtr, indexPtr.size() * sizeof(int));
+//     cudaMallocHost(&h_vec, vec.size() * sizeof(float));
+//     cudaMallocHost(&h_result, result.size() * sizeof(float));
+
+//     // Copy data to pinned memory
+//     memcpy(h_val, val.data(), val.size() * sizeof(float));
+//     memcpy(h_colInd, colInd.data(), colInd.size() * sizeof(int));
+//     memcpy(h_indexPtr, indexPtr.data(), indexPtr.size() * sizeof(int));
+//     memcpy(h_vec, vec.data(), vec.size() * sizeof(float));
+
+//     // Allocate memory on GPU
+//     cudaMalloc(&d_val, val.size() * sizeof(float));
+//     cudaMalloc(&d_colInd, colInd.size() * sizeof(int));
+//     cudaMalloc(&d_indexPtr, indexPtr.size() * sizeof(int));
+//     cudaMalloc(&d_vec, vec.size() * sizeof(float));
+//     cudaMalloc(&d_result, result.size() * sizeof(float));
+
+//     // Copy data from pinned memory to GPU
+//     cudaMemcpy(d_val, h_val, val.size() * sizeof(float), cudaMemcpyHostToDevice);
+//     cudaMemcpy(d_colInd, h_colInd, colInd.size() * sizeof(int), cudaMemcpyHostToDevice);
+//     cudaMemcpy(d_indexPtr, h_indexPtr, indexPtr.size() * sizeof(int), cudaMemcpyHostToDevice);
+//     cudaMemcpy(d_vec, h_vec, vec.size() * sizeof(float), cudaMemcpyHostToDevice);
+
+//     // Calculate grid and block sizes
+//     int blockSize = 256; // Example block size, adjust as needed
+//     int numBlocks = (indexPtr.size() + blockSize - 1) / blockSize;
+
+//     // Launch kernel
+//     sparseMatrixVecDotKernel<<<numBlocks, blockSize>>>(d_val, d_colInd, d_indexPtr, d_vec, d_result, indexPtr.size() - 1, vec.size());
+
+//     // Copy results back to pinned memory
+//     cudaMemcpy(h_result, d_result, result.size() * sizeof(float), cudaMemcpyDeviceToHost);
+
+//     // Copy data from pinned memory to result vector
+//     memcpy(result.data(), h_result, result.size() * sizeof(float));
+
+//     // Clean up, free GPU memory
+//     cudaFree(d_val);
+//     cudaFree(d_colInd);
+//     cudaFree(d_indexPtr);
+//     cudaFree(d_vec);
+//     cudaFree(d_result);
+
+//     // Free pinned memory
+//     cudaFreeHost(h_val);
+//     cudaFreeHost(h_colInd);
+//     cudaFreeHost(h_indexPtr);
+//     cudaFreeHost(h_vec);
+//     cudaFreeHost(h_result);
+// }
 // void kernelSparseMatVecdot(const std::vector<float> &val,
 //                            const std::vector<int> &colInd,
 //                            const std::vector<int> &indexPtr,

@@ -65,20 +65,21 @@ public:
         {
             grid.resize(colMat * colMat, 0);
             auto start = std::chrono::high_resolution_clock::now();
+            std::cout << "flag: " << flag << "\t";
             startRandomWalk();
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double, std::milli> duration = end - start;
             std::cout << "Computing time: " << duration.count() << "ms \t" << std::endl;
-            std::string filename1 = "../data/gpu/data_" + std::to_string(flag) + ".txt";
-            std::ofstream out1(filename1);
+            // std::string filename1 = "/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/data/data_" + std::to_string(flag) + ".txt";
+            // std::ofstream out1(filename1);
             for (size_t j = 0; j < particlesPosition.size(); j += 3)
             {
-                out1 << particlesPosition[j] << " " << particlesPosition[j + 1] << " " << particlesPosition[j + 2] << std::endl;
+                // out1 << particlesPosition[j] << " " << particlesPosition[j + 1] << " " << particlesPosition[j + 2] << std::endl;
 
                 dealwithGrid(particlesPosition[j], particlesPosition[j + 1]);
             }
-            out1.close();
-            std::string filename = "../data/gpu/result_" + std::to_string(flag) + ".txt";
+            // out1.close();
+            std::string filename = "/users/zhuan160/APMA2822B/final_project1/apma2822b_final_project/apma2822b_final_project/data/result_" + std::to_string(flag) + ".txt";
             std::ofstream out(filename);
             for (int col = 0; col < colMat; col++)
             {
@@ -126,6 +127,8 @@ private:
     void dealwithGrid(float particleX, float particleY)
     {
         // 根据粒子的原始坐标，将其移动到矩阵中心
+        particleX *= 32;
+        particleY *= 32;
         particleX += 801;
         particleY += 801;
 
